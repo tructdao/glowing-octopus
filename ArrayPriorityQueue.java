@@ -10,7 +10,7 @@ public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueu
     private ArrayList<T> _queue;
 
     public ArrayPriorityQueue(){
-        _queue = new ArrayList<>();
+        _queue = new ArrayList<T>();
     }
 
     // Add item such that the ArrayPriorityQueue will remain sorted by priority

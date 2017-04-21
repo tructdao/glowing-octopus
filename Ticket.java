@@ -1,4 +1,4 @@
-public class Ticket{
+public class Ticket implements Comparable{
 
     private int _vipLevel, _ID;
     private String _descrip, _name, _solutionDescrip;
@@ -19,5 +19,9 @@ public class Ticket{
 	_descrip = descrip;
 	_name = name;
     }
-    
+
+    public int compareTo(Object x){
+	return 0;
+    }
+
 }
