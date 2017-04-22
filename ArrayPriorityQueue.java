@@ -5,7 +5,7 @@
  * In the case of multiple items with the same priority, the first item of a given priority will be the first to be dequeue'd when that priority is the highest priority. That is, there is a FIFO-ness to items that are of the same priority.
  ********************************/
 import java.util.ArrayList;
-public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueue<T>{
+public class ArrayPriorityQueue<T> implements PriorityQueue<T>{
 
     private ArrayList<T> _queue;
 

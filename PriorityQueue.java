@@ -1,4 +1,4 @@
-public interface PriorityQueue<T extends Comparable<T>>{
+public interface PriorityQueue<T>{
 
     public void add(T x);
 

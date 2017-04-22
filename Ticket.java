@@ -13,15 +13,27 @@ public class Ticket implements Comparable{
 	_solved = false;
     }
 
-    public Ticket(int vip, String descrip, String name){
+    public Ticket(int vip, String descrip, String name,int id){
 	this();
 	_vipLevel = vip;
 	_descrip = descrip;
 	_name = name;
+	_ID=id;
     }
 
-    public int compareTo(Object x){
-	return 0;
+    public int getVIP(){
+	return _vipLevel;
+    }
+    public int compareTo(Ticket x){
+	if(x.getVIP()> this.getVIP()){
+	    return -1;
+	}
+	else if(x.getVIP() < this.getVIP()){
+	    return 1;
+	}
+	else{
+	    return 0;
+	}
     }
 
 }
