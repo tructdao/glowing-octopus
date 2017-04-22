@@ -4,6 +4,7 @@ public class Ticket implements Comparable{
     private String _descrip, _name, _solutionDescrip;
     private boolean _solved;
 
+    //default constructor
     public Ticket(){
 	_vipLevel = 0;
 	_ID = 0000;
@@ -13,6 +14,7 @@ public class Ticket implements Comparable{
 	_solved = false;
     }
 
+    //overloaded constructor
     public Ticket(int vip, String descrip, String name,int id){
 	this();
 	_vipLevel = vip;
@@ -21,9 +23,26 @@ public class Ticket implements Comparable{
 	_ID=id;
     }
 
+    //-------------------------vv Accessors vv -----------------------
+    
     public int getVIP(){
 	return _vipLevel;
     }
+
+    public int getID(){
+	return _ID;
+    }
+    
+    public String getName(){
+	return _name;
+    }
+
+    public boolean isSolved(){
+	return _solved;
+    }
+    
+    //-------------------------^^ Accessors ^^ -----------------------
+    
     public int compareTo(Ticket x){
 	if(x.getVIP()> this.getVIP()){
 	    return -1;
