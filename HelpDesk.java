@@ -5,6 +5,7 @@ public class HelpDesk<T>{
     private ArrayPriorityQueue<T> _tickets;
     private int numPpl;
     private int solved;
+    
     public HelpDesk(){
 	_tickets = new ArrayPriorityQueue<T>();
 	numPpl=0;
@@ -20,7 +21,6 @@ public class HelpDesk<T>{
 	_tickets.add( new Ticket(importance, problem, nombre,numPpl));
 	numPpl=numPpl+1;
     }
-	
 
     public static void main(String[] args){
     }
