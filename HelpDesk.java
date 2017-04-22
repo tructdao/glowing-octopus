@@ -1,6 +1,6 @@
 //it works when we remove <Ticket>
 import cs1.Keyboard;
-public class HelpDesk <T>{
+public class HelpDesk<T>{
 
     private ArrayPriorityQueue<T> _tickets;
     private int numPpl;
