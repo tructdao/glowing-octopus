@@ -31,7 +31,7 @@ public class HelpDesk{
 	System.out.println("Do you have a:");
 	System.out.println("\tA) broken computer?");
 	System.out.println("\tB) Internet issues?");
-	System.out.print("\nResponse: ");
+	System.out.print("\nResponse(A or B): ");
 	String ret = Keyboard.readString().toUpperCase();
 	System.out.println();
 	return ret;
