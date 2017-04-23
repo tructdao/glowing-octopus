@@ -1,5 +1,5 @@
-//it works when we remove <Ticket>
 import cs1.Keyboard;
+
 public class HelpDesk{
 
     private ArrayPriorityQueue<Ticket> _tickets;
@@ -13,12 +13,16 @@ public class HelpDesk{
     }
 
     public void newTicket(){
-	System.out.println("Hello, We look forward to solving your problem.\n to get started can you tell us your name?");
+	System.out.println("Hello, We look forward to solving your problem.\n "
+			   + "To get started can you tell us your name?");
 	String nombre= Keyboard.readString();
-	System.out.println("ok, thank you " + nombre+ ". Can you describe your problem for me?");
+	System.out.println("ok, thank you " + nombre+ ". " +
+			   "Can you describe your problem for me?");
 	String problem= Keyboard.readString();
 	int importance= (int) (Math.random()*25);
-	System.out.println("ok I understand your problem, here's your ticket number " + numPpl +". We will help you shortly, please hold. :)");
+	System.out.println("OK I understand your problem, here's your ticket " +
+			   "number " + numPpl +". " +
+			   "We will help you shortly, please hold. :)");
 	_tickets.add( new Ticket(importance, problem, nombre,numPpl));
 	numPpl=numPpl+1;
     }
