@@ -43,6 +43,10 @@ public class Ticket implements Comparable{
     
     //-------------------------^^ Accessors ^^ -----------------------
     
+    public int compareTo(Object x){
+        return 0;
+    }
+
     public int compareTo(Ticket x){
 	if(x.getVIP()> this.getVIP()){
 	    return -1;

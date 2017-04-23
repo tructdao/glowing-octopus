@@ -1,13 +1,13 @@
 //it works when we remove <Ticket>
 import cs1.Keyboard;
-public class HelpDesk<T>{
+public class HelpDesk{
 
-    private ArrayPriorityQueue<T> _tickets;
+    private ArrayPriorityQueue<Ticket> _tickets;
     private int numPpl;
     private int solved;
     
     public HelpDesk(){
-	_tickets = new ArrayPriorityQueue<T>();
+	_tickets = new ArrayPriorityQueue<Ticket>();
 	numPpl=0;
 	solved=0;
     }
