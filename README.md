@@ -6,7 +6,7 @@ First, we generically typed our ArrayPriorityQueue class and implemented the Com
 We then created the Ticket class which includes instance variables for the following:
 
 * VIP level
-..* This is how we will keep our Array Priority queue organized.
+..* This is how we will keep our Array Priority queue organized. It is a random number from 0 to 10. 0 being the highest priority.  
 * ID number
 ..* This ID number is a number that shows the chronological order in which each of the tickets were added to the queue.
 * Description
