@@ -13,18 +13,28 @@ public class HelpDesk{
     }
 
     public void newTicket(){
-	System.out.println("Hello, We look forward to solving your problem.\n "
+	System.out.println("Hello, We look forward to solving your problem.\n"
 			   + "To get started can you tell us your name?");
-	String nombre= Keyboard.readString();
-	System.out.println("ok, thank you " + nombre+ ". " +
+	String nombre = Keyboard.readString();
+	System.out.println("OK, thank you " + nombre + ". " +
 			   "Can you describe your problem for me?");
-	String problem= Keyboard.readString();
-	int importance= (int) (Math.random()*25);
+	String problem = issue();
+	int importance = (int) (Math.random()*25);
 	System.out.println("OK I understand your problem, here's your ticket " +
-			   "number " + numPpl +". " +
+			   "number " + numPpl +".\n" +
 			   "We will help you shortly, please hold. :)");
-	_tickets.add( new Ticket(importance, problem, nombre,numPpl));
+	_tickets.add( new Ticket(importance, problem, nombre,numPpl) );
 	numPpl=numPpl+1;
+    }
+
+    public static String issue(){
+	System.out.println("Do you have a:");
+	System.out.println("\tA) broken computer?");
+	System.out.println("\tB) Internet issues?");
+	System.out.print("\nResponse: ");
+	String ret = Keyboard.readString().toUpperCase();
+	System.out.println();
+	return ret;
     }
 
     public static void main(String[] args){
