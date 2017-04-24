@@ -1,6 +1,6 @@
 import cs1.Keyboard;
 
-public class Ticket implements Comparable{
+public class Ticket implements Comparable<Ticket>{
 
     private int _vipLevel, _ID;
     private String _descrip, _name, _solutionDescrip;
@@ -45,10 +45,6 @@ public class Ticket implements Comparable{
     
     //-------------------------^^ Accessors ^^ -----------------------
     
-    public int compareTo(Object x){
-        return 0;
-    }
-
     public int compareTo(Ticket x){
 	if(x.getVIP()> this.getVIP()){
 	    return -1;
