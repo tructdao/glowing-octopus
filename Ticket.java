@@ -52,7 +52,7 @@ public class Ticket implements Comparable<Ticket>{
     }
     
     //-------------------------^^ Accessors ^^-----------------------
-    //-------------------------vv Mutators  vv-----------------------
+    //-------------------------vv  Mutators  vv-----------------------
     
     public int setVIP( int level ){
         int old = _vipLevel;
@@ -78,7 +78,7 @@ public class Ticket implements Comparable<Ticket>{
         return _solved;
     }
 
-    //-------------------------^^ Mutators  ^^-----------------------
+    //-------------------------^^  Mutators  ^^-----------------------
 
     public int compareTo(Ticket x){
 	if(x.getVIP()> this.getVIP()){
@@ -129,6 +129,8 @@ public class Ticket implements Comparable<Ticket>{
 				       "calling!");
 		}
 		else{
+		    System.out.println("Try calling the manufacturer then.");
+		    System.out.println("Have a nice day!");
 		}
 	    }
 	}

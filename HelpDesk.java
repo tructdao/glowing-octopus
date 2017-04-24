@@ -25,37 +25,60 @@ public class HelpDesk{
     }
 
     public static String issue(){
-    System.out.println("Can you describe your problem?");
-    String ret = Keyboard.readString();
-    System.out.println("Interesting... What have you tried so far to fix it?" );
-    ret += Keyboard.readString();
-    /*
+	System.out.println("Can you describe your problem?");
+	String ret = Keyboard.readString();
+	System.out.println("Interesting... What have you tried so far to fix " +
+			   "it?" );
+	ret += Keyboard.readString();
 	System.out.println("Do you have a:");
 	System.out.println("\tA) broken computer?");
 	System.out.println("\tB) Internet issues?");
 	System.out.print("\nResponse(A or B): ");
-	String ret = Keyboard.readString().toUpperCase();
+        ret = Keyboard.readString().toUpperCase();
 	System.out.println();
-    */
 	return ret;
     }
 
+    public Ticket getTicket(int ID){
+        for (Ticket x : _tickets){
+	    if (x.getID() == ID){
+		return x;
+	    }
+	}
+	System.out.println("No such ticket available, new Ticket being" +
+			   "created. \nThank you for your patience.");
+	newTicket();
+	for (Ticket x : _tickets){
+	    if (x.getID() == numPpl - 1){
+		return x;
+	    }
+	}
+    }
+
     public static void main(String[] args){
-        HelpDesk hd= new HelpDesk();
+        HelpDesk hd = new HelpDesk();
         boolean needHelp = true;
         while( needHelp ){
-            System.out.println("Hello, this is tech support. Do you wish to create a ticket or look at an old one?");
+            System.out.println("Hello, this is tech support.\n" +
+			       "Do you wish to create a ticket or " +
+			       "look at an old one?");
             System.out.println("A) Create Ticket");
             System.out.println("B) Look at Ticket");
             System.out.println("C) Exit");
             String ans = Keyboard.readString().toUpperCase();
             if( ans.equals("A") ){
                 hd.newTicket();
-            } else if( ans.equals("B") ){
-                //Add case where person views ticket and it is dequeued
-            } else if( ans.equals("C") ){
+            }
+	    else if( ans.equals("B") ){
+                System.out.print("Please type in your ticket ID: ");
+		int ID = Keyboard.readInt();
+		Ticket current = hd.getTicket(ID);
+		current.solveIssue();
+            }
+	    else if( ans.equals("C") ){
                 needHelp = false;
-            } else {
+            }
+	    else {
                 System.out.println("Input invalid");
             }
         }
