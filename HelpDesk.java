@@ -40,19 +40,21 @@ public class HelpDesk{
     }
 
     public Ticket getTicket(int ID){
-        for (Ticket x : _tickets){
-	    if (x.getID() == ID){
-		return x;
+        for( int i = 0; i < _tickets.size(); i++ ){
+	    if (_tickets.get(i).getID() == ID){
+		return _tickets.get(i);
 	    }
+        
 	}
 	System.out.println("No such ticket available, new Ticket being" +
 			   "created. \nThank you for your patience.");
 	newTicket();
-	for (Ticket x : _tickets){
-	    if (x.getID() == numPpl - 1){
-		return x;
+    for( int i = 0; i < _tickets.size(); i++ ){
+	    if (_tickets.get(i).getID() == numPpl - 1){
+		return _tickets.get(i);
 	    }
 	}
+    return null;
     }
 
     public static void main(String[] args){

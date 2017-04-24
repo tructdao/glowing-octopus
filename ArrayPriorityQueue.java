@@ -13,6 +13,14 @@ public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueu
         _queue = new ArrayList<T>();
     }
 
+    public int size(){
+        return _queue.size();
+    }
+
+    public T get( int i ){
+        return _queue.get( i );
+    }
+
     // Add item such that the ArrayPriorityQueue will remain sorted by priority
     public void add( T newInt ){
         _queue.add( newInt );

@@ -46,8 +46,7 @@ public class Ticket implements Comparable<Ticket>{
     public String getSoln(){
         return _solutionDescrip;
     }
-
-    public boolean isSolved(){
+public boolean isSolved(){
 	return _solved;
     }
     
@@ -101,27 +100,29 @@ public class Ticket implements Comparable<Ticket>{
 	    brokenComputer();
 	}
 	if (_descrip.equals("B")){
+        noInternet();
 	}
 	_solved = true;
     }
 
-    public void brokenComputer(){
-	System.out.println("Have you tried turning it on and off yet?");
-	System.out.println("Response: ");
+
+    public void noInternet(){
+	System.out.println("Have you tried turning your router on and off yet?");
+	System.out.println("Response(Y or N): ");
 	String response = Keyboard.readString().toUpperCase();
 	if (response.equals("Y")){
-	    System.out.println("Is your computer in one piece?");
-	    System.out.println("Response: ");
+	    System.out.println("Is your router in one piece?");
+	    System.out.println("Response(Y or N): ");
 	    response = Keyboard.readString().toUpperCase();
 	    if (response.equals("N")){
-		System.out.println("You need a new computer then. " +
+		System.out.println("You need a new router then. " +
 				   "Thank you for calling!");
 	    }
 	    else{
-		System.out.println("Is your computer connected to a power " +
+		System.out.println("Is your router connected to a power " +
 				   "source?");
 		System.out.println("Does it have any battery left?");
-		System.out.println("Response: ");
+		System.out.println("Response(Y or N): ");
 		response = Keyboard.readString().toUpperCase();
 		if (response.equals("N")){
 		    System.out.println("Plug it in and come back later if it " +
@@ -137,7 +138,50 @@ public class Ticket implements Comparable<Ticket>{
 	else{
 	    System.out.println("Please do so.");
 	    System.out.println("Did it work?");
-	    System.out.println("Response: ");
+	    System.out.println("Response(Y or N): ");
+	    response = Keyboard.readString().toUpperCase();
+	    if (response.equals("Y")){
+		System.out.println("Great to hear! Have a good day");
+	    }
+	    else{
+		noInternet();
+	    }
+	}
+    }
+
+    public void brokenComputer(){
+	System.out.println("Have you tried turning it on and off yet?");
+	System.out.println("Response(Y or N): ");
+	String response = Keyboard.readString().toUpperCase();
+	if (response.equals("Y")){
+	    System.out.println("Is your computer in one piece?");
+	    System.out.println("Response(Y or N): ");
+	    response = Keyboard.readString().toUpperCase();
+	    if (response.equals("N")){
+		System.out.println("You need a new computer then. " +
+				   "Thank you for calling!");
+	    }
+	    else{
+		System.out.println("Is your computer connected to a power " +
+				   "source?");
+		System.out.println("Does it have any battery left?");
+		System.out.println("Response(Y or N): ");
+		response = Keyboard.readString().toUpperCase();
+		if (response.equals("N")){
+		    System.out.println("Plug it in and come back later if it " +
+				       "still isn't working. Thanks for " +
+				       "calling!");
+		}
+		else{
+		    System.out.println("Try calling the manufacturer then.");
+		    System.out.println("Have a nice day!");
+		}
+	    }
+	}
+	else{
+	    System.out.println("Please do so.");
+	    System.out.println("Did it work?");
+	    System.out.println("Response(Y or N): ");
 	    response = Keyboard.readString().toUpperCase();
 	    if (response.equals("Y")){
 		System.out.println("Great to hear! Have a good day");
