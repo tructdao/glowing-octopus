@@ -35,16 +35,51 @@ public class Ticket implements Comparable<Ticket>{
 	return _ID;
     }
     
+    public String getDescrip(){
+        return _descrip;
+    }
+    
     public String getName(){
 	return _name;
+    }
+
+    public String getSoln(){
+        return _solutionDescrip;
     }
 
     public boolean isSolved(){
 	return _solved;
     }
     
-    //-------------------------^^ Accessors ^^ -----------------------
+    //-------------------------^^ Accessors ^^-----------------------
+    //-------------------------vv Mutators  vv-----------------------
     
+    public int setVIP( int level ){
+        int old = _vipLevel;
+        _vipLevel = level;
+        return old;
+    }
+    
+    public String setDescrip( String descrip ){
+        String old = _descrip;
+        _descrip = descrip;
+        return old;
+    }
+
+    public String setSoln( String soln ){
+        String old = _solutionDescrip;
+        _solutionDescrip = soln;
+        return old;
+    }
+    
+    public boolean setSolved( boolean state ){
+        boolean old = _solved;
+        _solved = state;
+        return _solved;
+    }
+
+    //-------------------------^^ Mutators  ^^-----------------------
+
     public int compareTo(Ticket x){
 	if(x.getVIP()> this.getVIP()){
 	    return -1;
