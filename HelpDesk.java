@@ -70,6 +70,7 @@ public class HelpDesk{
     public static void main(String[] args){
         HelpDesk hd = new HelpDesk();
         boolean needHelp = true;
+	
         while( needHelp ){
             System.out.println("Hello, this is tech support.\n" +
 			       "Do you wish to create a ticket or " +
@@ -80,19 +81,23 @@ public class HelpDesk{
             String ans = Keyboard.readString().toUpperCase();
             if( ans.equals("A") ){
                 hd.newTicket();
+		System.out.println(hd._tickets);
             }
 	    else if( ans.equals("B") ){
                 System.out.print("Please type in your ticket ID: ");
 		int ID = Keyboard.readInt();
 		Ticket current = hd.getTicket(ID);
 		current.solveIssue();
+		System.out.println(hd._tickets);
             }
 	    else if( ans.equals("C") ){
                 needHelp = false;
+		System.out.println(hd._tickets);
             }
 	    else {
                 System.out.println("Input invalid");
             }
         }
+
     }
 }

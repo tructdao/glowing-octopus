@@ -90,6 +90,18 @@ public boolean isSolved(){
 	    return 0;
 	}
     }
+    public String toString(){
+	String ret= "";
+	ret= "===================================\n" +
+	    "Name: "+  getName()+ "\t\t" +
+	    "Ticket Number: " + getID()+ "\n" +
+	    "Priority: " + getVIP() + "\n" +
+	    "Problem: " + getDescrip() + "\n" +
+	    "Solution:" + getSoln() + "\n" +
+	    "Status:" + isSolved() +
+	    "\n===================================";
+	return ret;
+    }
 
     public void solveIssue(){
 	System.out.println("Welcome to the Help Desk!\n" +

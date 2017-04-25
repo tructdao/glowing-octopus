@@ -1,4 +1,4 @@
-# glowing-octopus
+#glowing-octopus
 ## Bayan Berri, Truc Dao, Arif Roktim
 
 ### Our Design
