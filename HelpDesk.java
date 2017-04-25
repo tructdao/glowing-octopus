@@ -16,7 +16,7 @@ public class HelpDesk{
 	String name = Keyboard.readString();
 	System.out.println("OK, thank you " + name + ". ");
 	String problem = issue();
-	int importance = (int) (Math.random()*25);
+	int importance = (int) (Math.random()*5);
 	System.out.println("OK I understand your problem, here's your ticket " +
 			   "number: " + numPpl +".\n" +
 			   "Please check back later. :)");
@@ -36,6 +36,16 @@ public class HelpDesk{
 	System.out.print("\nResponse(A or B): ");
         ret = Keyboard.readString().toUpperCase();
 	System.out.println();
+        if(ret.equals("A")){
+	    return ret;
+	}
+	else if(ret.equals("B")){
+	    return ret;
+	}
+	else{
+	    System.out.println("Invalid response, try again");
+	    issue();
+	}
 	return ret;
     }
 
