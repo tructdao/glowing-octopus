@@ -99,7 +99,7 @@ public boolean isSolved(){
 	    "Problem: " + getDescrip() + "\n" +
 	    "Solution:" + getSoln() + "\n" +
 	    "Status:" + isSolved() +
-	    "\n===================================";
+	    "\n===================================\n";
 	return ret;
     }
 

@@ -34,7 +34,7 @@ public class HelpDesk{
 	System.out.println("\tA) broken computer?");
 	System.out.println("\tB) Internet issues?");
 	System.out.print("\nResponse(A or B): ");
-        ret = Keyboard.readString().toUpperCase();
+	ret = Keyboard.readString().toUpperCase();
 	System.out.println();
         if(ret.equals("A")){
 	    return ret;
@@ -84,11 +84,20 @@ public class HelpDesk{
 		System.out.println(hd._tickets);
             }
 	    else if( ans.equals("B") ){
+		
                 System.out.print("Please type in your ticket ID: ");
 		int ID = Keyboard.readInt();
-		Ticket current = hd.getTicket(ID);
-		current.solveIssue();
-		System.out.println(hd._tickets);
+		
+		if((hd.getTicket(ID)).equals(hd._tickets.peekMin())){
+		    
+		    Ticket current = hd.getTicket(ID);
+		    current.solveIssue();
+		    hd._tickets.removeMin();
+		    System.out.println(hd._tickets);
+		}
+		else{
+		    System.out.println("it's not your turn yet, patience is a virtue");
+		}
             }
 	    else if( ans.equals("C") ){
                 needHelp = false;
