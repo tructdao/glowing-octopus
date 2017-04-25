@@ -97,7 +97,6 @@ public boolean isSolved(){
 	    "Ticket Number: " + getID()+ "\n" +
 	    "Priority: " + getVIP() + "\n" +
 	    "Problem: " + getDescrip() + "\n" +
-	    "Solution:" + getSoln() + "\n" +
 	    "Status:" + isSolved() +
 	    "\n===================================\n";
 	return ret;
